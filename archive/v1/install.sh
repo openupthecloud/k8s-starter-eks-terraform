@@ -1,9 +1,5 @@
 #/bin/bash
 
-# Install Terraform
-sudo apt update && sudo apt install terraform
-terraform init
-
 # Install KubeCTL
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
 

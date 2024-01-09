@@ -1,0 +1,6 @@
+tasks:
+  - command: ./install.sh
+
+vscode: 
+  extensions:
+  - "HashiCorp.terraform"
