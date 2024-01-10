@@ -1,3 +1,4 @@
+# TODO: Create VPC explicitly
 resource "aws_subnet" "private_subnet_1" {
   vpc_id                  = var.vpc_id
   cidr_block              = "172.31.96.0/20"
@@ -37,7 +38,7 @@ module "eks" {
       min_size       = 1
       max_size       = 1
       desired_size   = 1
-      instance_types = ["t2.micro"]
+      instance_types = ["t3.medium"]
     }
   }
 }
