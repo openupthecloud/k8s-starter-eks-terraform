@@ -63,7 +63,7 @@ By using Terraform we can easily create and destroy our infrastructure repeatedl
 
 #### Why not use EKSCTL? 
 
-Terraform is a widely adopted tool that works across a lot more technology than just Kubernetes. If the rest of your infrastructure in AWS is defined in Kubernetes, it would make sense to deploy your cluster in Terraform to take advantage of connecting features such as Terraform outputs, etc. Terraform also gives you a lot of fine-grained control. At some point, abstractions like EKSCTL start to break down. Starting with Terraform from the beginning avoids the need to migrate to Terraform or a more flexible provisioning tool later. 
+Terraform is a widely adopted tool that works across a lot more technology than just Kubernetes. If the rest of your infrastructure in AWS is defined in Kubernetes, it would make sense to deploy your cluster in Terraform to take advantage of connecting features such as Terraform outputs, etc. Terraform also gives you a lot of fine-grained control. At some point, abstractions like EKSCTL start to break down. Starting with Terraform from the beginning avoids the need to migrate to Terraform or a more flexible provisioning tool later. Don't believe me, see [this StackOverflow thread](https://stackoverflow.com/questions/65497019/aws-eks-from-scratch-terraform-or-eksctl).
 
 #### Why not use [minikube](https://minikube.sigs.k8s.io/docs/), [kind](https://kind.sigs.k8s.io/), or other local Kubernetes tools? 
 
