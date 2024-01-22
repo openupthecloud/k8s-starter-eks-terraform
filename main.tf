@@ -1,21 +1,24 @@
-# TODO: Create VPC explicitly
-resource "aws_subnet" "private_subnet_1" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = "172.31.96.0/20"
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "subnet_1" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.0.0/20"
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
 }
 
-resource "aws_subnet" "private_subnet_2" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = "172.31.112.0/20"
+resource "aws_subnet" "subnet_2" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.16.0/20"
   availability_zone       = "us-east-1c"
   map_public_ip_on_launch = true
 }
 
-resource "aws_subnet" "private_subnet_3" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = "172.31.128.0/20"
+resource "aws_subnet" "subnet_3" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.32.0/20"
   availability_zone       = "us-east-1d"
   map_public_ip_on_launch = true
 }
@@ -29,9 +32,9 @@ module "eks" {
 
   cluster_endpoint_public_access = true
 
-  vpc_id                   = var.vpc_id
-  subnet_ids               = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id, aws_subnet.private_subnet_3.id]
-  control_plane_subnet_ids = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id, aws_subnet.private_subnet_3.id]
+  vpc_id                   = aws_vpc.main.id
+  subnet_ids               = [aws_subnet.subnet_1.id, aws_subnet.subnet_2.id, aws_subnet.subnet_3.id]
+  control_plane_subnet_ids = [aws_subnet.subnet_1.id, aws_subnet.subnet_2.id, aws_subnet.subnet_3.id]
 
   eks_managed_node_groups = {
     green = {

@@ -28,7 +28,4 @@ terraform apply -var vpc_id=$(aws ec2 describe-vpcs | jq -r .Vpcs[0].VpcId)
 
 aws eks update-kubeconfig --region us-east-1 --name my-cluster-eks
 
-# Create Kubernetes resources
-kubectl create namespace eks-sample-app
-kubectl apply -f eks-sample-deployment.yaml
-kubectl apply -f eks-sample-service.yaml
+kubectl apply -f app.yaml

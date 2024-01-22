@@ -49,11 +49,11 @@ terraform apply -var vpc_id=$(aws ec2 describe-vpcs | jq -r .Vpcs[0].VpcId)
 aws eks update-kubeconfig --region us-east-1 --name my-cluster-eks
 ```
 
-### Step 4: Create a namespace, deployment and service
+### Step 4: Create an app with a deployment and service
 
-1. `kubectl create namespace eks-sample-app`
-2. `kubectl apply -f eks-sample-deployment.yaml`
-3. `kubectl apply -f eks-sample-service.yaml`
+```sh
+kubectl apply -f app.yaml
+```
 
 ### FAQs
 
@@ -71,6 +71,7 @@ The local K8s replication tools are useful for learning the terminology behind K
 
 #### How can I see what is running in my cluster when deployed?
 
+`kubectl get pods -n eks-sample-app`
 `kubectl get all -n eks-sample-app`
 
 #### How can I debug my deployed service?
