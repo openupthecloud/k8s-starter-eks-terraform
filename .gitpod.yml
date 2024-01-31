@@ -6,6 +6,7 @@ vscode:
   extensions:
     - "HashiCorp.terraform"
     - "ms-azuretools.vscode-docker"
+    - "p1c2u.docker-compose"
 
 ports:
   - port: 3000

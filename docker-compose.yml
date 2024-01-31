@@ -2,6 +2,7 @@ version: '3.0'
 
 services:
   microservice-a:
+    image: microservice-a
     build:
       context: ./microservice-a
       dockerfile: Dockerfile
@@ -9,6 +10,7 @@ services:
     - "3000:3000"
   
   microservice-b:
+    image: microservice-b
     build:
       context: ./microservice-b
       dockerfile: Dockerfile
