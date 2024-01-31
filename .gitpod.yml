@@ -1,6 +1,7 @@
 tasks:
   - command: ./install.sh
 
-vscode: 
+vscode:
   extensions:
-  - "HashiCorp.terraform"
+    - "HashiCorp.terraform"
+    - "ms-azuretools.vscode-docker"
