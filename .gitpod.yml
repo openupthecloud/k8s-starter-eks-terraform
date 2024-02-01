@@ -1,8 +1,8 @@
 tasks:
-  - command: \
-      ./scripts/terraform-deploy.sh \
-      ./scripts/ecr-push.sh \
-      ./scripts/kubernetes-deploy.sh \
+  - command: |
+      ./scripts/terraform-deploy.sh 
+      ./scripts/ecr-push.sh 
+      ./scripts/kubernetes-deploy.sh
   - command: docker-compose up
 
 vscode:
