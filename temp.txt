@@ -1,0 +1,2 @@
+node main.js
+docker build . -t microservice-a
