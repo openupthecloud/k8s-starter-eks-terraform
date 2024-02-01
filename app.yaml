@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 704969081030.dkr.ecr.us-east-1.amazonaws.com/microservice-a
+          image: 670483336223.dkr.ecr.us-east-1.amazonaws.com/microservice-a
           resources:
             limits:
               memory: "128Mi"

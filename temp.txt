@@ -1,2 +1,6 @@
 node main.js
 docker build . -t microservice-a
+docker run -p 3000:3000 microservice-a 
+docker run -p 3001:3001 microservice-a
+./scripts/ecr-push.sh
+./scripts/kubernetes-deploy.sh

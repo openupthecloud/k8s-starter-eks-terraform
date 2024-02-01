@@ -1,6 +1,7 @@
 version: '3.0'
 
 services:
+
   microservice-a:
     image: microservice-a
     build:
@@ -8,11 +9,3 @@ services:
       dockerfile: Dockerfile
     ports:
     - "3000:3000"
-  
-  microservice-b:
-    image: microservice-b
-    build:
-      context: ./microservice-b
-      dockerfile: Dockerfile
-    ports:
-    - "3001:3001"

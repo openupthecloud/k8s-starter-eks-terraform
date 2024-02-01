@@ -21,6 +21,11 @@ resource "aws_route_table" "main" {
   }
 }
 
+resource "aws_main_route_table_association" "a" {
+  vpc_id         = aws_vpc.main.id
+  route_table_id = aws_route_table.main.id
+}
+
 resource "aws_subnet" "subnet_1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.0.0/20"

@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello World from Kubernetes via Microservice A Gitpod CDEs Again');
+    res.send('Hello World from Kubernetes via Microservice A Gitpod CDEs Again Now running 3001');
 });
 
 app.listen(PORT, () => {
