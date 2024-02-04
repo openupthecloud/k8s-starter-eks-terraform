@@ -10,6 +10,8 @@ vscode:
     - "HashiCorp.terraform"
     - "ms-azuretools.vscode-docker"
     - "p1c2u.docker-compose"
+    - "Tim-Koehler.helm-intellisense"
+    - "ms-kubernetes-tools.vscode-kubernetes-tools"
 
 ports:
   - port: 3000
