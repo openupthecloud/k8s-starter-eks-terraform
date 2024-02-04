@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservicea
+  name: nginx-example-deployment
 spec:
   selector:
     matchLabels:
@@ -13,14 +13,14 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 704969081030.dkr.ecr.us-east-1.amazonaws.com/microservice-a
+          image: public.ecr.aws/nginx/nginx:1.23
           resources:
             limits:
               memory: "128Mi"
               cpu: "500m"
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -32,5 +32,5 @@ spec:
     app: eks-sample-linux-app
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 80
+      targetPort: 80
