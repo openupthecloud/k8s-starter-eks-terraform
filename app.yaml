@@ -5,15 +5,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: eks-sample-linux-app
+      app: microservice-a
   template:
     metadata:
       labels:
-        app: eks-sample-linux-app
+        app: microservice-a
     spec:
       containers:
         - name: nginx
-          image: 670483336223.dkr.ecr.us-east-1.amazonaws.com/microservice-a
+          image: 262559753791.dkr.ecr.us-east-1.amazonaws.com/microservice-a
           resources:
             limits:
               memory: "128Mi"
@@ -25,12 +25,49 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: eks-sample-linux-service
+  name: eks-sample-linux-service-a
 spec:
   type: LoadBalancer
   selector:
-    app: eks-sample-linux-app
+    app: microservice-a
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microserviceb
+spec:
+  selector:
+    matchLabels:
+      app: microservice-b
+  template:
+    metadata:
+      labels:
+        app: microservice-b
+    spec:
+      containers:
+        - name: nginx
+          image: 262559753791.dkr.ecr.us-east-1.amazonaws.com/microservice-b
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - name: http
+              containerPort: 3001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eks-sample-linux-service-b
+spec:
+  type: LoadBalancer
+  selector:
+    app: microservice-b
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001

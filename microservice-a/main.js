@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello World from Kubernetes via Microservice A Gitpod CDEs Again Running Port 3000 - 10:06');
+    res.send(`Microservice A running on port ${PORT} - updated for demo!`);
 });
 
 app.listen(PORT, () => {

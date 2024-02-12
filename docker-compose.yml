@@ -9,3 +9,11 @@ services:
       dockerfile: Dockerfile
     ports:
     - "3000:3000"
+
+  microservice-b:
+    image: microservice-b
+    build:
+      context: ./microservice-b
+      dockerfile: Dockerfile
+    ports:
+    - "3001:3001"

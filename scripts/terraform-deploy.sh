@@ -22,6 +22,10 @@ sudo ./aws/install
 rm -rf awscliv2.zip
 rm -rf aws
 
+## Install Tilt
+gem uninstall tilt
+curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
+
 aws configure
 
 terraform apply
