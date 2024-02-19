@@ -1,0 +1,2 @@
+- Refactor app-deploy scripts in microservices (redundancy)
+- Create a base image docker from installed packages

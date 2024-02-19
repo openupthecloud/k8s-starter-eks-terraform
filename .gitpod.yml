@@ -1,9 +1,16 @@
 tasks:
   - command: |
-      ./scripts/terraform-deploy.sh 
-      ./scripts/ecr-push.sh 
-      ./scripts/kubernetes-deploy.sh
+      ./scripts/env-setup.sh 
+      ./kubernetes-infra/deploy-infra.sh
+      ./scripts/env-auth.sh 
+      ./microservice-a/app-deploy.sh
+      ./microservice-b/app-deploy.sh
+      ./kubernetes-infra/deploy-kubernetes.sh
   - command: docker-compose up
+  - command: |
+      cd backstage/backstage
+      yarn
+      yarn dev
 
 vscode:
   extensions:
@@ -18,4 +25,8 @@ ports:
 
   - port: 3001
     name: "Microservice B"
+    visibility: private
+
+  - port: 4000
+    name: "Backstage"
     visibility: private
