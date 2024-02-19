@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:4000
 
 organization:
-  name: My Company
+  name: Kumquat
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins

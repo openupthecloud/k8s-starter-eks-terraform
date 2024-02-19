@@ -17,6 +17,7 @@ vscode:
     - "HashiCorp.terraform"
     - "ms-azuretools.vscode-docker"
     - "p1c2u.docker-compose"
+    - "Intility.vscode-backstage"
 
 ports:
   - port: 3000

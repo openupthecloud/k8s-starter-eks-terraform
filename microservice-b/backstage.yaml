@@ -2,9 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: microservice-a
-  annotations:
-    backstage.io/kubernetes-id: "microservice-a"
+  name: microservice-b
 spec:
   type: service
   lifecycle: experimental
