@@ -1,2 +1,14 @@
+## Steps
+- Terraform EKS
+- ConfigMap / Vault
+- Database with PVC
+- ArgoCD
+- Backstage UI with SSO
+- CLI for platform
+- DevSpace for dev loop
+- Crossplane
+- Grafana (?)
+
+
 - Refactor app-deploy scripts in microservices (redundancy)
 - Create a base image docker from installed packages

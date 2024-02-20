@@ -1,13 +1,21 @@
 tasks:
-  - command: |
+  - name: "Setup"
+    command: |
       ./scripts/env-setup.sh 
       ./kubernetes-infra/deploy-infra.sh
       ./scripts/env-auth.sh 
       ./microservice-a/app-deploy.sh
       ./microservice-b/app-deploy.sh
       ./kubernetes-infra/deploy-kubernetes.sh
-  - command: docker-compose up
-  - command: |
+      gp sync-done "setup"
+
+  - name: "Microservices"
+    command: docker-compose up
+
+  - name: "Backstage"
+    command: |
+      gp sync-await "setup"
+      source ./backstage/backstage/env-setup.sh
       cd backstage/backstage
       yarn
       yarn dev

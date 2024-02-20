@@ -85,3 +85,16 @@ output "ecr_repository_url_microservice_a" {
 output "ecr_repository_url_microservice_b" {
   value = aws_ecr_repository.microservice_b.repository_url
 }
+
+output "eks_cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "eks_cluster_certificate_authority" {
+  value = module.eks.cluster_certificate_authority_data
+}
+
+output "eks_cluster_oidc" {
+  value = module.eks.oidc_provider
+}
+

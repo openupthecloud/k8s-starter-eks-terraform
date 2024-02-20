@@ -4,7 +4,7 @@ kind: Component
 metadata:
   name: microservice-a
   annotations:
-    backstage.io/kubernetes-id: "microservice-a"
+    "backstage.io/kubernetes-label-selector": "app=microservice-a"
 spec:
   type: service
   lifecycle: experimental
