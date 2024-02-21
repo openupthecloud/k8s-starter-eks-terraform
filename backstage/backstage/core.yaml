@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: microservices
+  description: A grouping of example microservices
+spec:
+  owner: guests

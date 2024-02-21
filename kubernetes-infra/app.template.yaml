@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 713433340466.dkr.ecr.us-east-1.amazonaws.com/microservice-a
+          image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/microservice-a
           resources:
             limits:
               memory: "128Mi"
@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 713433340466.dkr.ecr.us-east-1.amazonaws.com/microservice-b
+          image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/microservice-b
           resources:
             limits:
               memory: "128Mi"

@@ -9,4 +9,6 @@ spec:
   type: service
   lifecycle: experimental
   owner: guests
-  system: examples
+  system: microservices
+  dependsOn:
+    - service:microservice-b

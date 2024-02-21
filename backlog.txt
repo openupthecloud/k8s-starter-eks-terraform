@@ -1,4 +1,5 @@
 ## Steps
+
 - Terraform EKS
 - ConfigMap / Vault
 - Database with PVC
@@ -8,7 +9,6 @@
 - DevSpace for dev loop
 - Crossplane
 - Grafana (?)
-
 
 - Refactor app-deploy scripts in microservices (redundancy)
 - Create a base image docker from installed packages

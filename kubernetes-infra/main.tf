@@ -52,7 +52,7 @@ module "eks" {
   version = "~> 19.0"
 
   cluster_name    = "my-cluster-eks"
-  cluster_version = "1.27"
+  cluster_version = "1.28"
 
   cluster_endpoint_public_access = true
 

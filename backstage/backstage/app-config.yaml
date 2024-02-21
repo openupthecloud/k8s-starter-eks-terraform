@@ -49,5 +49,9 @@ catalog:
   locations:
     - type: file
       target: ../../../../microservice-a/backstage.yaml
+
     - type: file
       target: ../../../../microservice-b/backstage.yaml
+
+    - type: file
+      target: ../../core.yaml
