@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app=backstage"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
+  system: microservices
+  dependsOn:
+    - service:microservice-b

@@ -7,6 +7,7 @@ tasks:
       ./microservice-a/app-deploy.sh
       ./microservice-b/app-deploy.sh
       ./kubernetes-infra/deploy-kubernetes.sh
+      ./kubernetes-infra/deploy-backstage.sh
       gp sync-done "setup"
 
   - name: "Microservices"

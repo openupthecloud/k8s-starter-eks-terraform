@@ -1,14 +1,16 @@
-## Steps
+Steps: 
+1. Add readiness/liveness probes
+2. Clean up Gitpod Dev Image
+3. ConfigMap / Vault
+4. Database with PVC
+5. GitHub Actions for Application Pipeline
+6. ArgoCD for GitOps
+7. Backstage UI with SSO
+8. CLI for platform
+9. DevSpace for dev loop
+10. Crossplane
+11. Grafana (?)
 
-- Terraform EKS
-- ConfigMap / Vault
-- Database with PVC
-- ArgoCD
-- Backstage UI with SSO
-- CLI for platform
-- DevSpace for dev loop
-- Crossplane
-- Grafana (?)
-
+Refactor
 - Refactor app-deploy scripts in microservices (redundancy)
-- Create a base image docker from installed packages
+- Create namespaces for Microservices

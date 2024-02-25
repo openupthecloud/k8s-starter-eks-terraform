@@ -39,6 +39,7 @@ kubernetes:
           authProvider: "aws"
 
 catalog:
+  processingInterval: { seconds: 5 }
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
@@ -52,6 +53,9 @@ catalog:
 
     - type: file
       target: ../../../../microservice-b/backstage.yaml
+
+    - type: file
+      target: ../../backstage.yaml
 
     - type: file
       target: ../../core.yaml

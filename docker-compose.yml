@@ -1,7 +1,6 @@
 version: '3.0'
 
 services:
-
   microservice-a:
     image: microservice-a
     build:
