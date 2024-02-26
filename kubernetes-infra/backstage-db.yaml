@@ -8,6 +8,8 @@ kind: Secret
 metadata:
   name: postgres-secrets
   namespace: backstage
+  labels:
+    app: backstage
 type: Opaque
 data:
   POSTGRES_USER: YmFja3N0YWdl
@@ -19,6 +21,7 @@ metadata:
   name: postgres-storage
   namespace: backstage
   labels:
+    app: backstage
     type: local
 spec:
   storageClassName: manual
@@ -35,6 +38,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: postgres-storage-claim
   namespace: backstage
+  labels:
+    app: backstage
 spec:
   storageClassName: manual
   accessModes:
@@ -48,15 +53,18 @@ kind: Deployment
 metadata:
   name: postgres
   namespace: backstage
+  labels:
+    app: backstage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      component: postgres
   template:
     metadata:
       labels:
-        app: postgres
+        app: backstage
+        component: postgres
     spec:
       containers:
         - name: postgres
@@ -80,8 +88,11 @@ kind: Service
 metadata:
   name: postgres
   namespace: backstage
+  labels:
+    app: backstage
+    component: postgres
 spec:
   selector:
-    app: postgres
+    component: postgres
   ports:
     - port: 5432

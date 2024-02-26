@@ -40,12 +40,8 @@ kubernetes:
 
 catalog:
   processingInterval: { seconds: 5 }
-  import:
-    entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
-
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Group]
 
   locations:
     - type: file
@@ -56,6 +52,3 @@ catalog:
 
     - type: file
       target: ../../backstage.yaml
-
-    - type: file
-      target: ../../core.yaml

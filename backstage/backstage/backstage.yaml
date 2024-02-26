@@ -1,4 +1,36 @@
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: microservices
+  description: Backtage application
+spec:
+  owner: app-devs
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: app-devs
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: backstage
+  description: Backtage application
+spec:
+  owner: platform
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -7,8 +39,18 @@ metadata:
     "backstage.io/kubernetes-label-selector": "app=backstage"
 spec:
   type: service
-  lifecycle: experimental
-  owner: guests
-  system: microservices
-  dependsOn:
-    - service:microservice-b
+  lifecycle: production
+  owner: platform
+  system: backstage
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: postgres-database
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app=backstage"
+spec:
+  type: database
+  lifecycle: production
+  owner: platform
+  system: backstage

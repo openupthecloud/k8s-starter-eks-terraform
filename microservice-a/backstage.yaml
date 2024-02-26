@@ -8,7 +8,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: guests
+  owner: app-devs
   system: microservices
   dependsOn:
     - service:microservice-b
